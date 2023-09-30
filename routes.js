@@ -1,5 +1,5 @@
 const controller = require("./food-controller");
-const Joi = require("joi");
+const schema = require("./food-schema");
 
 
 const routes = [
@@ -14,12 +14,7 @@ const routes = [
     options: {
       handler: controller.create,
       validate: {
-        payload: Joi.object({
-          description: Joi.string().min(3).max(50).required(),
-          value: Joi.number().precision(2).required(),
-          category: Joi.string().required(),
-          quantity: Joi.number().required(),
-        })
+        payload: schema.postFood
       }
     }
   },
