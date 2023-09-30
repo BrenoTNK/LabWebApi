@@ -14,7 +14,7 @@ const routes = [
     options: {
       handler: controller.create,
       validate: {
-        payload: schema.postFood
+        payload: schema.postFood.payload
       }
     }
   },
